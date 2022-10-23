@@ -1,0 +1,7 @@
+<div>
+  <ng-container *ngIf="listData$ | async as list">
+    <app-default-list
+      [dataSource]="list.data"
+    ></app-default-list>
+  </ng-container>
+</div>
