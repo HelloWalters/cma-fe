@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
-import{ HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Campaign } from 'src/app/shared/models/campaign.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiCmaBackEndService {
-  private serviceEndpoint: string = "http://localhost:3000";
-  constructor(private httpClient: HttpClient) {
+  private serviceEndpoint: string = 'http://localhost:3000';
+  constructor(private httpClient: HttpClient) {}
+
+  public getCurrentUser() {
+    return this.httpClient.get(`${this.serviceEndpoint}/api/currentUser`);
   }
 
-  public setEndpoint(endpoint: string){
+  public setEndpoint(endpoint: string) {
     this.serviceEndpoint = endpoint;
   }
 
-  public getAllCampaigns(){
-    return this.httpClient.get<Campaign[]>(`${this.serviceEndpoint}/getAllCampaigns`)
+  public postNewCampaign(campaign: Campaign) {}
+  public getAllCampaigns() {
+    return this.httpClient.get<Campaign[]>(
+      `${this.serviceEndpoint}/getAllCampaigns`
+    );
   }
 }

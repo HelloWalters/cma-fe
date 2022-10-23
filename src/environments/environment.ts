@@ -5,7 +5,7 @@ const BASE_BACKEND_URL = 'https://localhost:3000'
 export const environment = {
   production: false
 };
-export const BaseBackenConstraints = {
+export const BaseBackendConstraints = {
   CMA_BE:`${BASE_BACKEND_URL}`
 }
 /*

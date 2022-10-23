@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NewCampaignFormComponent } from './shared/components/forms/new-campaign-form/new-campaign-form.component';
 import { CampaignDisplayListComponent } from './shared/modules/campaigns/campaign-list/campaign-display-list/campaign-display-list.component';
 import { DefaultListComponent } from './shared/components/lists/default-list/default-list.component';
+import { CurrentUserComponent } from './shared/components/users/current-user/current-user.component';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     NewCampaignFormComponent,
     CampaignDisplayListComponent,
     DefaultListComponent,
+    CurrentUserComponent
   ],
   imports: [
     BrowserModule,
