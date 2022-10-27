@@ -13,10 +13,10 @@ export class UsersService{
   }
   isLoadingSubject = new BehaviorSubject<boolean>(true);
   isloading$ = this.isLoadingSubject.asObservable();
-  currentUser$ = this.apiCmaBackEndService.getCurrentUser().pipe(
+  user$ = this.apiCmaBackEndService.getCurrentUser().pipe(
     tap(() => this.isLoadingSubject.next(true))
   );
-  user$ = combineLatest([this.currentUser$]).pipe(
+  currentUser$ = combineLatest([this.user$]).pipe(
     map(([data]) => {
       return { data };
     })

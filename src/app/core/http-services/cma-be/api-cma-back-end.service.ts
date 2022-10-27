@@ -10,7 +10,7 @@ export class ApiCmaBackEndService {
   constructor(private httpClient: HttpClient) {}
 
   public getCurrentUser() {
-    return this.httpClient.get(`${this.serviceEndpoint}/api/currentUser`);
+    return this.httpClient.get<any>(`${this.serviceEndpoint}/api/currentUser`);
   }
 
   public setEndpoint(endpoint: string) {
