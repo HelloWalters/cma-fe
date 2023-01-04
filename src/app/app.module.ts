@@ -11,6 +11,7 @@ import { DefaultListComponent } from './shared/components/lists/default-list/def
 import { CurrentUserComponent } from './shared/components/users/current-user/current-user.component';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatListModule,
+    MatInputModule,
     HttpClientModule
   ],
   providers: [],

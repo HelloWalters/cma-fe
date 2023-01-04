@@ -8,6 +8,11 @@ import { UsersService } from 'src/app/shared/services/users.service';
   styleUrls: ['./current-user.component.scss']
 })
 export class CurrentUserComponent implements OnInit {
+
+
+  // TODO update backend aut/google/callback as per Udemy course
+  // TODO add signin/signout callback for frontend
+
   isloading$ = this.usersService.isloading$;
   currentUser$ = this.usersService.currentUser$;
   constructor(private usersService: UsersService) { }
