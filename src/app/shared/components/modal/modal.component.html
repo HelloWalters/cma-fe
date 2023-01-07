@@ -1,0 +1,20 @@
+<div class="modal-overlay" [style.z-index]="zIndex" (click)="onOutsideClick($event)">
+  <div class="modal-wrapper" [style.z-index]="zIndex + 1" (click)="onOutsideClick($event)" #modalRed>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          {{title}}
+        </div>
+        <div class="modal-close" (click)="onCloseClick($event)">
+          X
+        </div>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <ng-content select="[footer]"></ng-content>
+    </div>
+  </div>
+</div>
+

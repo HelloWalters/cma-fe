@@ -1,0 +1,6 @@
+<div class="button-flex">
+  <button mat-raised-button [color]="style" (click)="buttonClicked()" [title]="altText">{{ title }}</button>
+  <span [style.visibility]="'hidden'" [style.width]="'0px'">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="info"></mat-icon>
+  </span>
+</div>
