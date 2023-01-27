@@ -1,0 +1,147 @@
+<app-modal [title]="formTitle" (closeEmitter)="closeModalEvent()">
+  <div body>
+    <form [formGroup]="characterDetailsForm" class="form">
+
+      <!-- Character Details -->
+
+      <div class="cs-form-header">
+        Character Details
+      </div>
+      <div class="cs-form-input-section">
+        <mat-form-field class="full-width">
+          <mat-label>Character Name</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Inigo Montoya'..."
+          value=""
+          formControlName="characterName"
+          title="Define the name of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Class</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Rogue'..."
+          value=""
+          formControlName="characterClass"
+          title="Define the class of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Background</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Criminal'..."
+          value=""
+          formControlName="characterBackground"
+          title="Define the background of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Alignment</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Criminal'..."
+          value=""
+          formControlName="characterAlignment"
+          title="Define the background of this character"
+          >
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+    </form>
+
+      <!-- Character Abilities -->
+
+    <form [formGroup]="characterSkillsForm" class="form">
+      <div class="cs-form-header">
+        Character Abilities
+      </div>
+      <div class="cs-form-input-section">
+        <mat-form-field class="full-width">
+          <mat-label>Strength</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Inigo Montoya'..."
+          value=""
+          formControlName="strength"
+          title="Define the name of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Dexterity</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Rogue'..."
+          value=""
+          formControlName="dexterity"
+          title="Define the class of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Constitution</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Criminal'..."
+          value=""
+          formControlName="constitution"
+          title="Define the background of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Intelligence</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Criminal'..."
+          value=""
+          formControlName="intelligence"
+          title="Define the background of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Wisdom</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Criminal'..."
+          value=""
+          formControlName="wisdom"
+          title="Define the background of this character"
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Charisma</mat-label>
+          <input
+          matInput
+          placeholder="E.g 'Criminal'..."
+          value=""
+          formControlName="charisma"
+          title="Define the background of this character"
+          >
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+    </form>
+  </div>
+  <div [style.width]="'100%'" footer>
+    <div class="flex-row">
+    <app-default-button
+      [title]="'Cancel'"
+      altText="Cancel creating a new campaign"
+      (activated)="closeModalEvent()"
+    ></app-default-button>
+    <app-default-button
+      [title]="'Submit' | uppercase"
+      [style]="'primary'"
+      [isDisabled]=""
+      [altText]="'Submits the form and creates a new campaign'"
+      (activated)="''"
+    ></app-default-button>
+  </div>
+  </div>
+</app-modal>
+
+      <!-- <div class="input-group">      </div>
+      <div class="add-item-flex-container">
+        <mat-icon title="Add a new input to this section" fontIcon="add_box"></mat-icon>
+      </div> -->

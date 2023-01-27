@@ -1,4 +1,8 @@
 .button-flex{
   display: flex;
   flex-direction:row;
+  justify-content: center;
+  button{
+    padding:0px 35px;
+  }
 }

@@ -1,0 +1,23 @@
+<div>
+  <div>
+    <app-default-button
+      [title]="'Create a new Campaign'"
+      [altText]="'Opens form to create a new campaign.'"
+      [style]="'accent'"
+      (activated)="openCreateModal()"
+    ></app-default-button>
+  </div>
+  <br/>
+  <ng-container *ngIf="campaignsInfo$ | async">
+    <app-campaign-display-list
+      (openCampaign)="openCampaign($event)"
+    >
+    </app-campaign-display-list>
+  </ng-container>
+</div>
+
+  <app-new-campaign-form
+    *ngIf="showNewCampaignForm"
+    (closeModal)="closeCreateModal()"
+    (formSuccess)="createFormSuccess()"
+  ></app-new-campaign-form>

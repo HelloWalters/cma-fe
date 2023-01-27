@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Campaign, CampaignResponse } from 'src/app/shared/models/campaign.model';
 
 @Component({
   selector: 'app-default-list',
@@ -8,9 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DefaultListComponent implements OnInit {
 
   public itemsData: any[] = [];
-  @Input() set dataSource(data: any[]){
-    this.setListDataSource(data);
-  }
+  @Input() dataSource: CampaignResponse[] | undefined;
   constructor() { }
 
   ngOnInit(): void {

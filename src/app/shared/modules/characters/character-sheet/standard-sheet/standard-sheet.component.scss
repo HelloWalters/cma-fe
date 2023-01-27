@@ -1,0 +1,24 @@
+div.cs-form-input-section{
+  padding:30px;
+  div.add-item-flex-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    mat-icon{
+      color:white;
+      filter:drop-shadow(1px 1px 1px #656565ee);
+      transition-duration: .05s;
+    }
+    mat-icon:hover{
+      cursor: pointer ;
+    }
+  }
+}
+div.cs-form-header{
+  color:grey;
+  font-size: large;
+  font-style: italic;
+}
+form.form:not(:first-of-type){
+  padding-top: 30px;
+}

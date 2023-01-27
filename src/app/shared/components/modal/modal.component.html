@@ -1,12 +1,16 @@
-<div class="modal-overlay" [style.z-index]="zIndex" (click)="onOutsideClick($event)">
+<div
+  class="modal-overlay"
+  [style.z-index]="zIndex"
+  (click)="onOutsideClick($event)"
+>
   <div class="modal-wrapper" [style.z-index]="zIndex + 1" (click)="onOutsideClick($event)" #modalRed>
-    <div class="modal-content">
+    <div class="modal-content mat-elevation-z12">
       <div class="modal-header">
         <div class="modal-title">
           {{title}}
         </div>
         <div class="modal-close" (click)="onCloseClick($event)">
-          X
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
         </div>
       </div>
       <div class="modal-body">
@@ -17,4 +21,3 @@
     </div>
   </div>
 </div>
-

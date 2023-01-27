@@ -1,7 +1,7 @@
 <app-modal [title]="formTitle" (closeEmitter)="closeModalEvent()">
   <div body>
     <form [formGroup]="newCampaignForm"class="form">
-    <mat-form-field clfass="full-width">
+    <mat-form-field class="full-width">
       <mat-label>New Campaign Name</mat-label>
       <input
       matInput
@@ -41,14 +41,17 @@
     </mat-form-field>
   </form>
   </div>
-  <div footer>
+  <div [style.width]="'100%'" footer>
     <div class="flex-row">
     <app-default-button
       [title]="'Cancel'"
+      altText="Cancel creating a new campaign"
+      (activated)="closeModalEvent()"
     ></app-default-button>
     <app-default-button
       [title]="'Submit' | uppercase"
       [style]="'primary'"
+      [isDisabled]="!newCampaignForm.valid"
       [altText]="'Submits the form and creates a new campaign'"
       (activated)="submitNewCampaign()"
     ></app-default-button>

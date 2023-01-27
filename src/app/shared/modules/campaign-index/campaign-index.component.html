@@ -1,0 +1,18 @@
+<div>
+  <h1>{{campaign.row.campaignName}}</h1>
+  <div>
+    <p>{{campaign.row.campaignDescription}}</p>
+  </div>
+  <app-default-button
+    [title]="charSheetBtnTitle"
+    [altText]="'Opens form to create a new campaign.'"
+    [style]="'primary'"
+    (activated)="openCreateModal()"
+  ></app-default-button>
+</div>
+
+<app-standard-sheet
+  *ngIf="showNewCampaignForm"
+  (closeModal)="closeCreateModal()"
+  (formSuccess)="createFormSuccess()"
+></app-standard-sheet>

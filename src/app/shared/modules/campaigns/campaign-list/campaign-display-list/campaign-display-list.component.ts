@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
+import { Campaign, CampaignResponse } from 'src/app/shared/models/campaign.model';
 import { CampaignsService } from 'src/app/shared/services/campaigns.service';
 
 @Component({
@@ -10,10 +13,18 @@ import { CampaignsService } from 'src/app/shared/services/campaigns.service';
 export class CampaignDisplayListComponent implements OnInit {
 
   isloading$ = this.campaignService.isloading$;
-  listData$ = this.campaignService.campaignList$;
-  constructor(private campaignService: CampaignsService) { }
+  campaignData$: Observable<CampaignResponse[]> = this.campaignService.campaigns$;
+
+  @Output() openCampaign = new EventEmitter<{ row: any; index: string }>();
+
+
+  constructor(private campaignService: CampaignsService) {
+  }
 
   ngOnInit(): void {
   }
 
+  onOpen(row, index){
+    this.openCampaign.emit({row, index});
+  }
 }

@@ -1,7 +1,40 @@
-<div>
-  <ng-container *ngIf="listData$ | async as list">
-    <app-default-list
-      [dataSource]="list.data"
-    ></app-default-list>
-  </ng-container>
+<div class="cdl-div">
+  <table class="cdl-table" class="mat-elevation-z4">
+    <tr class="cdl-head">
+      <th>Campaign Name</th>
+      <th>Campaign Description</th>
+      <th>Campaign Tags</th>
+      <th>Campaign Theme</th>
+      <th>Campaign ID</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let campaign of campaignData$ | async">
+      <td>
+        {{ campaign.campaignName }}
+      </td>
+      <td>
+        {{ campaign.campaignDescription }}
+      </td>
+      <td>
+        {{ campaign.campaignTags }}
+      </td>
+      <td>
+        {{ campaign.campaignTheme }}
+      </td>
+      <td>
+        {{ campaign._id }}
+      </td>
+      <td>
+        <app-default-button
+          [title]="'Open'"
+          [style]="'secondary'"
+          [altText]="'Head over to this campagin!'"
+          (activated)="onOpen(campaign, campaign._id)"
+        ></app-default-button>
+      </td>
+    </tr>
+  </table>
+  <!--<ul *ngFor="let campaign of campaignData$ | async">
+    <li>{{ campaign.campaignName }}</li>
+  </ul>-->
 </div>
