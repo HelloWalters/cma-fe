@@ -1,0 +1,41 @@
+.route-page-head{
+  h1{
+    font-style: italic;
+    color:#616161
+  }
+}
+h1{
+  margin: unset;
+}
+.card-list{
+  text-align: left;
+  max-width: 450px;
+  .list-card{
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 6px #6666;
+    cursor: pointer;
+    *{
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+  h3{
+    font-size: x-large;
+    text-align: center;
+    text-transform: uppercase;
+    color:#848484;
+    text-shadow: 2px 2px 3px #65656565;
+    font-style: italic;
+  }
+
+  mat-divider{
+    margin:20px 0px;
+  }
+}
+.modal-subtitle{
+  color:grey;
+  text-align: left;
+  font-size:smaller;
+  font-style: italic;
+}

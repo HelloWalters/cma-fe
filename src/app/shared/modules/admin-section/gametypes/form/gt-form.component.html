@@ -1,0 +1,39 @@
+<app-modal [title]="operation + ' Game Type'" (closeEmitter)="closeModalEvent()">
+  <div body>
+    <form [formGroup]="gameTypeForm" class="form">
+    <mat-form-field class="full-width">
+      <mat-label>New Game Type Name</mat-label>
+      <input
+      matInput
+      placeholder="New Game Type Name..."
+      value=""
+      formControlName="gameTypeName"
+      >
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Game Type Description</mat-label>
+      <textarea
+      matInput
+      placeholder="e.g. Game Type to wander the apocalypse..."
+      formControlName="gameTypeDescription"></textarea>
+    </mat-form-field>
+  </form>
+  </div>
+  <div [style.width]="'100%'" footer>
+    <div class="flex-row">
+    <app-default-button
+      [title]="'Cancel'"
+      altText="Cancel creating a new Game Type"
+      (activated)="closeModalEvent()"
+    ></app-default-button>
+    <app-default-button
+      [title]="'Submit' | uppercase"
+      [style]="'primary'"
+      [isDisabled]="!gameTypeForm.valid"
+      [altText]="'Submits the form and creates a new Game Type'"
+      (activated)="submitNewGameType()"
+    ></app-default-button>
+  </div>
+  </div>
+</app-modal>

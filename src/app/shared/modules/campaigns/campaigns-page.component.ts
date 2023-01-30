@@ -32,7 +32,8 @@ export class CampaignsPage{
   openCampaign(event:any){
     // TODO
     // console.log(event);
-    this.router.navigateByUrl('/campaign', { state: event });
+    this.campaignService.selectedCampaign = event;
+    this.router.navigateByUrl('/campaign');
 
   }
 }

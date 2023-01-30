@@ -1,0 +1,27 @@
+<div class="admin-card flex-col-25pc ht-150 space-between">
+  <h2>GameTypes</h2>
+  <app-default-button
+      [title]="'Create New Game Type'"
+      [altText]="'Opens form to create a new game type.'"
+      [style]="'primary'"
+      (activated)="showGameTypeForm = true"
+  ></app-default-button>
+  <app-default-button
+      [title]="'Show GameTypes'"
+      [altText]="'Opens listof existing game types.'"
+      [style]="'accent'"
+      (activated)="showGameTypeList = true"
+></app-default-button>
+</div>
+<app-gt-form
+  *ngIf="showGameTypeForm"
+  [gameType]="selectedGameType"
+  [operation]="operation"
+  (closeModal)="closeGameTypeModal()"
+  (formSuccess)="createFormSuccess()"
+></app-gt-form>
+<app-gt-list
+  *ngIf="showGameTypeList"
+  (closeModal)="closeListModal()"
+  (editGameType)="editGameType($event)"
+></app-gt-list>

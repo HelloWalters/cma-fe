@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Campaign, CampaignResponse } from 'src/app/shared/models/campaign.model';
 import { ICampaignRequest } from 'src/app/shared/services/campaigns.service';
 import { Observable } from 'rxjs';
+import { GameType } from 'src/app/shared/models/game-models/gametype.model'
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,18 @@ export class ApiCmaBackEndService {
     this.serviceEndpoint = endpoint;
   }
 
+  public postNewGameType(gameType: GameType){
+    return this.httpClient.post(`${this.serviceEndpoint}/createGameType`, gameType);
+  }
+
+  public putGameType(gameType: GameType){
+    return this.httpClient.put(`${this.serviceEndpoint}/updateGameType`, gameType);
+  }
+
+  public getGameTypes(): Observable<GameType[]> {
+    return this.httpClient.get<GameType[]>(`${this.serviceEndpoint}/getGameTypes`,{});
+  }
+
   public postNewCampaign(campaign: Campaign) {
     return this.httpClient.post(`${this.serviceEndpoint}/createCampaign`, campaign);
   }
@@ -26,7 +39,6 @@ export class ApiCmaBackEndService {
     return this.httpClient.get<CampaignResponse[]>(
       `${this.serviceEndpoint}/getCampaigns`, {
         params:{
-          'testParam': true
         }
       }
     );

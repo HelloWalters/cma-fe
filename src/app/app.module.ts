@@ -27,6 +27,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { AdminHome } from './shared/modules/admin-section/admin-home.component'
+import { GameTypeCard } from './shared/modules/admin-section/gametypes/card/gt-card.component'
+import { GameTypeForm } from './shared/modules/admin-section/gametypes/form/gt-form.component'
+import { GameTypeList } from './shared/modules/admin-section/gametypes/list/gt-list.component'
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { AdminHome } from './shared/modules/admin-section/admin-home.component'
     CampaignsPage,
     CampaignIndex,
     HomePage,
+    GameTypeCard,
+    GameTypeForm,
+    GameTypeList,
     StandardTableTopForm,
     NewCampaignFormComponent,
     AdminHome,
