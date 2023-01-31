@@ -4,6 +4,7 @@ import { Campaign, CampaignResponse } from 'src/app/shared/models/campaign.model
 import { ICampaignRequest } from 'src/app/shared/services/campaigns.service';
 import { Observable } from 'rxjs';
 import { GameType } from 'src/app/shared/models/game-models/gametype.model'
+import { GameRace } from 'src/app/shared/models/game-models/gamerace.model';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +31,18 @@ export class ApiCmaBackEndService {
 
   public getGameTypes(): Observable<GameType[]> {
     return this.httpClient.get<GameType[]>(`${this.serviceEndpoint}/getGameTypes`,{});
+  }
+
+  public postNewGameRace(gameRace: GameRace){
+    return this.httpClient.post(`${this.serviceEndpoint}/createGameRace`, gameRace);
+  }
+
+  public putGameRace(gameRace: GameRace){
+    return this.httpClient.put(`${this.serviceEndpoint}/updateGameRace`, gameRace);
+  }
+
+  public getGameRaces(): Observable<GameRace[]> {
+    return this.httpClient.get<GameRace[]>(`${this.serviceEndpoint}/getGameRaces`,{});
   }
 
   public postNewCampaign(campaign: Campaign) {

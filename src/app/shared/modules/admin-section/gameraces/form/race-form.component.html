@@ -1,0 +1,49 @@
+<app-modal [title]="operation + ' Game Race' | titlecase" (closeEmitter)="closeModalEvent()">
+  <div body>
+    <form [formGroup]="gameRaceForm" class="form">
+      <mat-form-field class="full-width">
+        <mat-label>New Game Race Name</mat-label>
+        <input
+          matInput
+          placeholder="New Game Race Name..."
+          value=""
+          formControlName="gameRaceName"
+        >
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>New Game Race Name</mat-label>
+        <input
+          matInput
+          placeholder="New Game Race Name..."
+          value=""
+          formControlName="gameRaceName"
+        >
+      </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Game Race Description</mat-label>
+      <textarea
+        matInput
+        value=""
+        placeholder="e.g. Vault Dweller to wander the apocalypse..."
+        formControlName="gameRaceDescription"
+      ></textarea>
+    </mat-form-field>
+  </form>
+  </div>
+  <div [style.width]="'100%'" footer>
+    <div class="flex-row">
+    <app-default-button
+      [title]="'Cancel'"
+      altText="Cancel creating a new Game Race"
+      (activated)="closeModalEvent()"
+    ></app-default-button>
+    <app-default-button
+      [title]="'Submit' | uppercase"
+      [style]="'primary'"
+      [isDisabled]="!gameRaceForm.valid"
+      [altText]="'Submits the form and creates a new Game Race'"
+      (activated)="submitNewGameType()"
+    ></app-default-button>
+  </div>
+  </div>
+</app-modal>

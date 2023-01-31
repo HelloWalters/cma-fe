@@ -7,6 +7,7 @@ import { BaseBackendConstraints } from "src/environments/environment";
 import { IPagination, defaultPagination } from "../interfaces/pagination";
 import { CampaignResponse } from "../models/campaign.model";
 import { GameType } from "../models/game-models/gametype.model";
+import { GameRace } from "../models/game-models/gamerace.model";
 
 @Injectable ({ providedIn: 'root' })
 
@@ -23,4 +24,9 @@ export class AdminService{
       () => of(0)
     )
   ) as Observable<GameType[]>;
+  gameRaces$ = this.apiCmaBackEndService.getGameRaces().pipe(
+    catchError(
+      () => of(0)
+    )
+  ) as Observable<GameRace[]>;
 }

@@ -30,6 +30,9 @@ import { AdminHome } from './shared/modules/admin-section/admin-home.component'
 import { GameTypeCard } from './shared/modules/admin-section/gametypes/card/gt-card.component'
 import { GameTypeForm } from './shared/modules/admin-section/gametypes/form/gt-form.component'
 import { GameTypeList } from './shared/modules/admin-section/gametypes/list/gt-list.component'
+import { GameRaceCard } from './shared/modules/admin-section/gameraces/card/race-card.component'
+import { GameRaceForm } from './shared/modules/admin-section/gameraces/form/race-form.component'
+import { GameRaceList } from './shared/modules/admin-section/gameraces/list/race-list.component'
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { GameTypeList } from './shared/modules/admin-section/gametypes/list/gt-l
     GameTypeCard,
     GameTypeForm,
     GameTypeList,
+    GameRaceCard,
+    GameRaceForm,
+    GameRaceList,
     StandardTableTopForm,
     NewCampaignFormComponent,
     AdminHome,
