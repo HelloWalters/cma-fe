@@ -1,14 +1,22 @@
 <app-modal [title]="operation + ' Game Race' | titlecase" (closeEmitter)="closeModalEvent()">
   <div body>
-    <form [formGroup]="gameRaceForm" class="form">
+    <form
+      [formGroup]="gameRaceForm"
+      *ngIf="gameTypes$ | async as gameTypes"
+      class="form"
+    >
       <mat-form-field class="full-width">
-        <mat-label>New Game Race Name</mat-label>
-        <input
-          matInput
-          placeholder="New Game Race Name..."
-          value=""
-          formControlName="gameRaceName"
-        >
+        <mat-label>Game Type</mat-label>
+        <mat-select
+            matInput
+            placeholder="Select a Game Type"
+            value=""
+            formControlName="gameTypeId"
+            >
+            <mat-option *ngFor="let gameType of gameTypes" [value]="gameType._id">
+              {{ gameType.gameTypeName }}
+            </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>New Game Race Name</mat-label>

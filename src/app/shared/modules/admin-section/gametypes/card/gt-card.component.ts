@@ -16,7 +16,7 @@ import { BaseBackendConstraints } from 'src/environments/environment';
 export class GameTypeCard {
   showGameTypeForm: boolean = false;
   showGameTypeList: boolean = false;
-  selectedGameType: GameType;
+  selectedGameType: GameType | undefined;
   operation: 'create' | 'update' = 'create';
 
   openGameTypeModal(){
@@ -27,6 +27,7 @@ export class GameTypeCard {
   closeGameTypeModal(){
     this.showGameTypeForm = false;
     this.operation = 'create';
+    delete this.selectedGameType;
   }
 
   closeListModal(){

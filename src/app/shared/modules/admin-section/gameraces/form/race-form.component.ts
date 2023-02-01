@@ -5,6 +5,7 @@ import { ApiCmaBackEndService } from 'src/app/core/http-services/cma-be/api-cma-
 import { IThemes } from 'src/app/shared/interfaces/themes.model';
 import { Campaign, CampaignResponse } from 'src/app/shared/models/campaign.model';
 import { GameRace } from 'src/app/shared/models/game-models/gamerace.model';
+import { GameType } from 'src/app/shared/models/game-models/gametype.model';
 import { AdminService } from 'src/app/shared/services/admin.service';
 import { BaseBackendConstraints } from 'src/environments/environment';
 
@@ -15,6 +16,7 @@ import { BaseBackendConstraints } from 'src/environments/environment';
 
 export class GameRaceForm implements OnInit {
   gameRaceForm: FormGroup;
+  gameTypes$: Observable<GameType[]> = this.adminService.gameTypes$;
 
   @Input() gameRace: GameRace;
   @Input() operation: 'create' | 'update';
@@ -28,6 +30,7 @@ export class GameRaceForm implements OnInit {
   ){
     this.apiCmaBackEndService.setEndpoint(BaseBackendConstraints.CMA_BE);
     this.gameRaceForm = new FormGroup({
+      gameTypeId: new FormControl('',Validators.required),
       gameRaceName: new FormControl('',Validators.required),
       gameRaceDescription: new FormControl('',Validators.required),
     })
@@ -36,6 +39,7 @@ export class GameRaceForm implements OnInit {
   ngOnInit(): void{
       console.log(this.gameRace);
     if(this.gameRace){
+      this.gameRaceForm.controls['gameTypeId'].patchValue(this.gameRace.gameTypeId);
       this.gameRaceForm.controls['gameRaceName'].patchValue(this.gameRace.gameRaceName);
       this.gameRaceForm.controls['gameRaceDescription'].patchValue(this.gameRace.gameRaceDescription);
     }
@@ -44,6 +48,7 @@ export class GameRaceForm implements OnInit {
   buildBody(): GameRace {
     return {
       ...this.gameRace,
+      gameTypeId: this.gameRaceForm.get('gameTypeId')?.value,
       gameRaceName: this.gameRaceForm.get('gameRaceName')?.value,
       gameRaceDescription: this.gameRaceForm.get('gameRaceDescription')?.value
     }

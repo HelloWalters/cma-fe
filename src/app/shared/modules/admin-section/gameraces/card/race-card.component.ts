@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiCmaBackEndService } from 'src/app/core/http-services/cma-be/api-cma-back-end.service';
 import { IThemes } from 'src/app/shared/interfaces/themes.model';
 import { Campaign, CampaignResponse } from 'src/app/shared/models/campaign.model';
+import { GameRace } from 'src/app/shared/models/game-models/gamerace.model';
 import { GameType } from 'src/app/shared/models/game-models/gametype.model';
 import { CampaignsService } from 'src/app/shared/services/campaigns.service';
 import { BaseBackendConstraints } from 'src/environments/environment';
@@ -16,7 +17,7 @@ import { BaseBackendConstraints } from 'src/environments/environment';
 export class GameRaceCard {
   showGameRaceForm: boolean = false;
   showGameRaceList: boolean = false;
-  selectedGameRace: GameType;
+  selectedGameRace: GameRace;
   operation: 'create' | 'update' = 'create';
 
   openGameRaceModal(){
