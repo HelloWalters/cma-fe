@@ -15,24 +15,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UiModalComponent } from './shared/components/modal/modal.component';
-import { StandardTableTopForm } from './shared/modules/characters/character-sheet/standard-sheet/standard-sheet.component'
+import { StandardTableTopForm } from './shared/modules/characters/character-sheet/standard-sheet/standard-sheet.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DefaultButton } from './shared/components/inputs/buttons/default-button/default-button.component';
-import { CampaignsPage } from './shared/modules/campaigns/campaigns-page.component'
-import { CampaignIndex } from './shared/modules/campaign-index/campaign-index.component'
-import { HomePage } from './shared/modules/home/home.component'
+import { CampaignsPage } from './shared/modules/campaigns/campaigns-page.component';
+import { CampaignIndex } from './shared/modules/campaign-index/campaign-index.component';
+import { HomePage } from './shared/modules/home/home.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { AdminHome } from './shared/modules/admin-section/admin-home.component'
-import { GameTypeCard } from './shared/modules/admin-section/gametypes/card/gt-card.component'
-import { GameTypeForm } from './shared/modules/admin-section/gametypes/form/gt-form.component'
-import { GameTypeList } from './shared/modules/admin-section/gametypes/list/gt-list.component'
-import { GameRaceCard } from './shared/modules/admin-section/gameraces/card/race-card.component'
-import { GameRaceForm } from './shared/modules/admin-section/gameraces/form/race-form.component'
-import { GameRaceList } from './shared/modules/admin-section/gameraces/list/race-list.component'
+import { AdminHome } from './shared/modules/admin-section/admin-home.component';
+import { GameTypeCard } from './shared/modules/admin-section/gametypes/card/gt-card.component';
+import { GameTypeForm } from './shared/modules/admin-section/gametypes/form/gt-form.component';
+import { GameTypeList } from './shared/modules/admin-section/gametypes/list/gt-list.component';
+import { GameRaceCard } from './shared/modules/admin-section/gameraces/card/race-card.component';
+import { GameRaceForm } from './shared/modules/admin-section/gameraces/form/race-form.component';
+import { GameRaceTable } from './shared/modules/admin-section/gameraces/table/race-table.component';
+import { StandardTable } from './shared/components/tables/standard-table/standard-table.component';
 
 @NgModule({
   declarations: [
@@ -45,15 +46,16 @@ import { GameRaceList } from './shared/modules/admin-section/gameraces/list/race
     GameTypeList,
     GameRaceCard,
     GameRaceForm,
-    GameRaceList,
+    GameRaceTable,
     StandardTableTopForm,
+    StandardTable,
     NewCampaignFormComponent,
     AdminHome,
     CampaignDisplayListComponent,
     DefaultListComponent,
     DefaultButton,
     CurrentUserComponent,
-    UiModalComponent
+    UiModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,12 +72,10 @@ import { GameRaceList } from './shared/modules/admin-section/gameraces/list/race
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-    UiModalComponent
-  ],
+  exports: [UiModalComponent],
 })
-export class AppModule { }
+export class AppModule {}

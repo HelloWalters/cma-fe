@@ -6,10 +6,10 @@ import { GameRace } from '../../../../models/game-models/gamerace.model';
 
 @Component({
   providers: [AdminService],
-  selector: 'app-race-list',
-  templateUrl: './race-list.component.html'
+  selector: 'app-race-table',
+  templateUrl: './race-table.component.html',
 })
-export class GameRaceList implements OnInit {
+export class GameRaceTable implements OnInit {
   listTitle: string = 'Game Races';
 
   isloading$ = this.adminService.isloading$;
@@ -18,18 +18,15 @@ export class GameRaceList implements OnInit {
   @Output() closeModal = new EventEmitter();
   @Output() editgameRace = new EventEmitter();
 
-  constructor(private adminService: AdminService) {
-  }
+  constructor(private adminService: AdminService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  closeModalEvent(){
+  closeModalEvent() {
     this.closeModal.emit();
   }
 
   editGameRaceFn(gameRace: GameRace): void {
     this.editgameRace.emit(gameRace);
   }
-
 }

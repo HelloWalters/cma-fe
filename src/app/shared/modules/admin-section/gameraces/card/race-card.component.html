@@ -2,17 +2,17 @@
   <div class="admin-card flex-col-25pc ht-150 space-between">
     <h2>Game Races</h2>
     <app-default-button
-        [title]="'Create New Game Race'"
-        [altText]="'Opens form to create a new game race.'"
-        [style]="'primary'"
-        (activated)="showGameRaceForm = true"
+      [title]="'Create New Game Race'"
+      [altText]="'Opens form to create a new game race.'"
+      [style]="'primary'"
+      (activated)="showGameRaceForm = true"
     ></app-default-button>
     <app-default-button
-        [title]="'Show Game Races'"
-        [altText]="'Opens listof existing game races.'"
-        [style]="'accent'"
-        (activated)="showGameRaceList = true"
-  ></app-default-button>
+      [title]="'Show Game Races'"
+      [altText]="'Opens listof existing game races.'"
+      [style]="'accent'"
+      (activated)="showGameRaceList = true"
+    ></app-default-button>
   </div>
   <app-race-form
     *ngIf="showGameRaceForm"
@@ -21,9 +21,9 @@
     (closeModal)="closeGameRaceModal()"
     (formSuccess)="createFormSuccess()"
   ></app-race-form>
-  <app-race-list
+  <app-race-table
     *ngIf="showGameRaceList"
     (closeModal)="closeListModal()"
     (editGameType)="editGameRace($event)"
-  ></app-race-list>
+  ></app-race-table>
 </div>
