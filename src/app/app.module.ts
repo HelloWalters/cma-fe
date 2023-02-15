@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NewCampaignFormComponent } from './shared/modules/campaigns/new-campaign-form/new-campaign-form.component';
-import { CampaignDisplayListComponent } from './shared/modules/campaigns/campaign-list/campaign-display-list/campaign-display-list.component';
 import { DefaultListComponent } from './shared/components/lists/default-list/default-list.component';
 import { CurrentUserComponent } from './shared/components/users/current-user/current-user.component';
 import { MatListModule } from '@angular/material/list';
@@ -23,7 +22,9 @@ import { CampaignsPage } from './shared/modules/campaigns/campaigns-page.compone
 import { CampaignIndex } from './shared/modules/campaign-index/campaign-index.component';
 import { HomePage } from './shared/modules/home/home.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { AdminHome } from './shared/modules/admin-section/admin-home.component';
@@ -51,7 +52,6 @@ import { StandardTable } from './shared/components/tables/standard-table/standar
     StandardTable,
     NewCampaignFormComponent,
     AdminHome,
-    CampaignDisplayListComponent,
     DefaultListComponent,
     DefaultButton,
     CurrentUserComponent,
@@ -66,7 +66,9 @@ import { StandardTable } from './shared/components/tables/standard-table/standar
     MatTableModule,
     MatRippleModule,
     MatDividerModule,
+    MatCheckboxModule,
     MatMenuModule,
+    MatPaginatorModule,
     MatIconModule,
     MatInputModule,
     MatSelectModule,

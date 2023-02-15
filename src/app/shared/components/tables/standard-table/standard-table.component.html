@@ -1,0 +1,31 @@
+<mat-table #table
+  [dataSource]="dataSource"
+  class="mat-elevation-z8">
+
+  <ng-container
+    *ngFor="let column of tableColumns; let colIndex = index;"
+    matColumnDef="{{column.prop}}">
+      <mat-header-cell
+        *matHeaderCellDef>
+        {{ column.name }}
+      </mat-header-cell>
+
+    <mat-cell
+      *matCellDef="let row">
+        <span>
+            {{ row[column.prop] }}
+        </span>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row
+    mat-header-row
+    *matHeaderRowDef="displayedColumns">
+  </mat-header-row>
+
+  <mat-row
+    mat-ripple
+    matRipple
+    *matRowDef="let row; columns: displayedColumns;">
+  </mat-row>
+</mat-table>

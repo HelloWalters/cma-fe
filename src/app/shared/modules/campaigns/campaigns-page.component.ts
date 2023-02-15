@@ -3,6 +3,7 @@ import { CampaignsService } from 'src/app/shared/services/campaigns.service';
 import { CampaignResponse } from '../../models/campaign.model';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { TABLE_COLUMNS } from './campaign-table.config'
 
 @Component({
   selector: 'app-campaigns-page',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CampaignsPage{
   showNewCampaignForm: boolean = false;
+  columns = TABLE_COLUMNS;
   campaignsInfo$: Observable<CampaignResponse[]> = this.campaignService.campaigns$;
   constructor(private campaignService: CampaignsService, private router: Router) {}
 

@@ -8,12 +8,16 @@
     ></app-default-button>
   </div>
   <br/>
-  <ng-container *ngIf="campaignsInfo$ | async">
-    <app-campaign-display-list
-      (openCampaign)="openCampaign($event)"
+    <div
+      *ngIf="campaignsInfo$ | async as data"
+      class="cdl-div"
     >
-    </app-campaign-display-list>
-  </ng-container>
+      <app-standard-table
+      [tableColumns]="columns"
+      [tableData]="data"
+      >
+      </app-standard-table>
+    </div>
 </div>
 
   <app-new-campaign-form

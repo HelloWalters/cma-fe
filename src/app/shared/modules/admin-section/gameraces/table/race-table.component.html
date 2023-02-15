@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:src/app/shared/modules/admin-section/gameraces/table/race-table.component.html
 <app-modal [title]="listTitle" (closeEmitter)="closeModalEvent()">
   <div body>
     <p class="modal-subtitle">(click on a Game Race type to edit)</p>
@@ -24,3 +25,26 @@
     </div>
   </div>
 </app-modal>
+=======
+<app-modal [title]="listTitle" (closeEmitter)="closeModalEvent()">
+  <div body>
+  <p class="modal-subtitle">(click on a Game Race type to edit)</p>
+    <div class="card-list" *ngFor="let gameRace of gameRaces$ | async">
+      <mat-divider></mat-divider>
+      <div (click)="editGameRaceFn(gameRace)" mat-ripple class="list-card" title="Edit this game race">
+        <h3>{{ gameRace.gameRaceName }}</h3>
+        <p>{{ gameRace.gameRaceDescription }}</p>
+      </div>
+    </div>
+  </div>
+  <div [style.width]="'100%'" footer>
+    <div class="flex-row">
+    <app-default-button
+      [title]="'Close'"
+      altText="Close list"
+      (activated)="closeModalEvent()"
+    ></app-default-button>
+  </div>
+  </div>
+</app-modal>
+>>>>>>> Stashed changes:src/app/shared/modules/admin-section/gameraces/list/race-list.component.html
